@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class TipoProduto implements Serializable {
 
-    public int idProduto;
+    public Integer idProduto;
 
     public int getIdProduto() {
         return idProduto;
