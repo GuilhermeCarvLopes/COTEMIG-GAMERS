@@ -1,7 +1,6 @@
 package com.example.apiCotemig.service;
 
 import com.example.apiCotemig.model.Empresa;
-import com.example.apiCotemig.model.TipoProduto;
 
 import java.util.List;
 import java.util.Optional;

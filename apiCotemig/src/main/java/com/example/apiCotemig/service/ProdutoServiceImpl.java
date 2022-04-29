@@ -1,8 +1,7 @@
 package com.example.apiCotemig.service;
 
-import com.example.apiCotemig.model.Empresa;
+
 import com.example.apiCotemig.model.Produto;
-import com.example.apiCotemig.repository.EmpresaRepository;
 import com.example.apiCotemig.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

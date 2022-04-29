@@ -1,8 +1,6 @@
 package com.example.apiCotemig.controller;
 
-import com.example.apiCotemig.model.Empresa;
 import com.example.apiCotemig.model.Produto;
-import com.example.apiCotemig.service.EmpresaService;
 import com.example.apiCotemig.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
