@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Cotemig Gamers</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
+        rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/carrinho.css" rel="stylesheet" />
+
+</head>
+
+<body id="page-top" style="margin: 0; padding: 0; width: 100%; height: 100%;">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container px-5">
+            <a class="navbar-brand" href="/">Cotemig Gamers</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="biblioteca">Bibliotecas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="usuario">Sign Up</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!">Log In</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Header-->
+    <header class="masthead text-white">
+        <div class="masthead-content">
+            <div class="container">
+                <!-- <h2 class="masthead-heading mb-4 text-center">Login</h2> -->
+                <div class="d-flex justify-content-center">
+                    <div class="card w-100">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="" id="divPayment">                                            
+                                            <h1 style="color: black;">Escolhe sua forma de pagamento:</h1>
+                                            <div id="accordion" class="accordion">
+                                                <div class="card ">
+                                                    <div class="card-header" id="cartao1Head">
+                                                        <h5 class="mb-0">
+                                                            <a data-toggle="collapse" data-parent="#accordion"
+                                                                href="#cartao1" aria-expanded="true"
+                                                                aria-controls="cartao1">
+                                                                <i class="fa fa-credit-card"></i> Pagar com Cartão</a>
+                                                        </h5>
+                                                    </div>
+                                                    <div id="cartao1" class="collapse show"
+                                                        aria-labelledby="cartao1Head" data-parent="#accordion">
+                                                        <div class="card-block">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label" style="color: black;">Número do
+                                                                            Cartão</label>
+                                                                        <input name="numeroCartao" class="form-control"
+                                                                            id="numeroCartao"
+                                                                            placeholder="**** **** **** ****"
+                                                                            autocomplete="off">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label" style="color: black;">Nome</label>
+                                                                        <input name="nomeCartao" class="form-control"
+                                                                            id="nomeCartao"
+                                                                            placeholder="Igual ao cartão">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-7">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label" style="color: black;">Dt.
+                                                                            Expiração</label>
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-prepend">
+                                                                                <select name="mesCartao"
+                                                                                    class="custom-select"
+                                                                                    id="mesCartao">]
+                                                                                    <option value="0">Mês</option>
+                                                                                    <option value="01">01</option>
+                                                                                    <option value="02">02</option>
+                                                                                    <option value="03">03</option>
+                                                                                    <option value="04">04</option>
+                                                                                    <option value="05">05</option>
+                                                                                    <option value="06">06</option>
+                                                                                    <option value="07">07</option>
+                                                                                    <option value="08">08</option>
+                                                                                    <option value="09">09</option>
+                                                                                    <option value="10">10</option>
+                                                                                    <option value="11">11</option>
+                                                                                    <option value="12">12</option>
+                                                                                </select>
+                                                                            </div>
+                                                                            <div class="input-group-append"><select
+                                                                                    name="anoCartao" id="anoCartao"
+                                                                                    class="custom-select">
+                                                                                    <option value="0">Ano</option>
+                                                                                    <option value="22">22</option>
+                                                                                    <option value="23">23</option>
+                                                                                    <option value="24">24</option>
+                                                                                    <option value="25">25</option>
+                                                                                    <option value="26">26</option>
+                                                                                    <option value="27">27</option>
+                                                                                    <option value="28">28</option>
+                                                                                    <option value="29">29</option>
+                                                                                    <option value="30">30</option>
+                                                                                    <option value="31">31</option>
+                                                                                    <option value="32">32</option>
+                                                                                    <option value="33">33</option>
+                                                                                    <option value="34">34</option>
+                                                                                    <option value="35">35</option>
+                                                                                    <option value="36">36</option>
+                                                                                    <option value="37">37</option>
+                                                                                    <option value="38">38</option>
+                                                                                    <option value="39">39</option>
+                                                                                    <option value="40">40</option>
+                                                                                    <option value="41">41</option>
+                                                                                    <option value="42">42</option>
+                                                                                </select></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-5">
+                                                                    <div class="form-group"><label
+                                                                            class="control-label" style="color: black;">Cód. Segurança</label>
+                                                                        <div class="input-group"><input name="cvv"
+                                                                                id="cvv"
+                                                                                class="form-control min-width-60"
+                                                                                placeholder="***" onblur=""><span
+                                                                                class="input-group-addon"><img
+                                                                                    id="imgCartao"
+                                                                                    src="/resources/share/img/cartao.png"
+                                                                                    height="40px"></span></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group"><label
+                                                                            class="control-label" style="color: black;">Número de
+                                                                            Parcelas</label><select name="parcelaCartao"
+                                                                            class="form-control" id="parcelaCartao">
+                                                                            <option value="">Selecione uma parcela
+                                                                            </option>
+                                                                            <option value="1;8990">1 x R$ 8.990,00
+                                                                            </option>
+                                                                            <option value="2;4575.01">2 x R$ 4.575,01
+                                                                            </option>
+                                                                            <option value="3;3076.68">3 x R$ 3.076,68
+                                                                            </option>
+                                                                            <option value="4;2327.51">4 x R$ 2.327,51
+                                                                            </option>
+                                                                            <option value="5;1878.01">5 x R$ 1.878,01
+                                                                            </option>
+                                                                            <option value="6;1578.35">6 x R$ 1.578,35
+                                                                            </option>
+                                                                            <option value="7;1364.3">7 x R$ 1.364,30
+                                                                            </option>
+                                                                            <option value="8;1203.76">8 x R$ 1.203,76
+                                                                            </option>
+                                                                            <option value="9;1078.9">9 x R$ 1.078,90
+                                                                            </option>
+                                                                            <option value="10;979.01">10 x R$ 979,01
+                                                                            </option>
+                                                                            <option value="11;897.28">11 x R$ 897,28
+                                                                            </option>
+                                                                            <option value="12;829.18">12 x R$ 829,18
+                                                                            </option>
+                                                                        </select></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="text-center pt-4"><button type="button"
+                                                                    class="btn btn btn-success btn-lg" id="btn btn-success-card1">
+                                                                    <i class="fa fa-check"></i>Realizar
+                                                                    Pagamento</button><br>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card ">
+                                                    <div class="card-header" id="boletoHead">
+                                                        <h5 class="mb-0"><a data-toggle="collapse"
+                                                                data-parent="#accordion" href="#boleto"
+                                                                aria-expanded="true" aria-controls="boleto"><i
+                                                                    class="fa fa-barcode"></i> Pagar
+                                                                com Boleto</a></h5>
+                                                    </div>
+                                                    <div id="boleto" class="collapse" aria-labelledby="boletoHead"
+                                                        data-parent="#accordion">
+                                                        <div class="card-block">
+                                                            <div class="form-group text-center pt-4"><label
+                                                                    class="label pr-2 text-secondary mb-1 ml-1" style="color: black">Pagamento à vista no boleto:
+                                                                    <span id="txtPagarAvista">R$
+                                                                        8.990,00</span></label><button type="button"
+                                                                    class="btn btn btn-success btn-lg" id="btn btn-success-boleto"><i
+                                                                        class="fa fa-check"></i>Realizar
+                                                                    Pagamento</button><br>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card ">
+                                                    <div class="card-header" id="cartao2Head">
+                                                        <h5 class="mb-0"><a data-toggle="collapse"
+                                                                data-parent="#accordion" href="#cartao2"
+                                                                aria-expanded="true" aria-controls="cartao2"><i
+                                                                    class="fa fa-credit-card"></i>&nbsp;<i
+                                                                    class="fa fa-credit-card"></i> Pagar
+                                                                com 2 Cartões</a></h5>
+                                                    </div>
+                                                    <div id="cartao2" class="collapse" aria-labelledby="cartao2Head"
+                                                        data-parent="#accordion">
+                                                        <div class="card-block">
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group"><label
+                                                                            class="control-label" style="color: black;">Valor no Cartão
+                                                                            1</label><input name="valorCartao1"
+                                                                            class="form-control" id="valorCartao1"
+                                                                            data-validation="ehValor"></div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group"><label
+                                                                            class="control-label" style="color: black;">Valor no Cartão
+                                                                            2</label><input name="valorCartao2"
+                                                                            class="form-control" id="valorCartao2"
+                                                                            data-validation="ehValor"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group"><label
+                                                                            class="control-label" style="color: black;" style="color: black;">Número do Cartão
+                                                                            1</label><input name="numeroCartao1"
+                                                                            class="form-control" id="numeroCartao1"
+                                                                            placeholder="**** **** **** ****"
+                                                                            autocomplete="off"></div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group"><label
+                                                                            class="control-label" style="color: black;">Nome do Cartão
+                                                                            1</label><input name="nomeCartao1"
+                                                                            class="form-control" id="nomeCartao1"
+                                                                            placeholder="Igual ao cartão">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-7">
+                                                                    <div class="form-group"><label
+                                                                            class="control-label" style="color: black;">Dt.
+                                                                            Expiração 1</label>
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-prepend"><select
+                                                                                    name="mesCartao1"
+                                                                                    class="custom-select"
+                                                                                    id="mesCartao1">
+                                                                                    <option value="0">Mês</option>
+                                                                                    <option value="01">01</option>
+                                                                                    <option value="02">02</option>
+                                                                                    <option value="03">03</option>
+                                                                                    <option value="04">04</option>
+                                                                                    <option value="05">05</option>
+                                                                                    <option value="06">06</option>
+                                                                                    <option value="07">07</option>
+                                                                                    <option value="08">08</option>
+                                                                                    <option value="09">09</option>
+                                                                                    <option value="10">10</option>
+                                                                                    <option value="11">11</option>
+                                                                                    <option value="12">12</option>
+                                                                                </select></div>
+                                                                            <div class="input-group-append"><select
+                                                                                    name="anoCartao1" id="anoCartao1"
+                                                                                    class="custom-select">
+                                                                                    <option value="0">Ano</option>
+                                                                                    <option value="22">22</option>
+                                                                                    <option value="23">23</option>
+                                                                                    <option value="24">24</option>
+                                                                                    <option value="25">25</option>
+                                                                                    <option value="26">26</option>
+                                                                                    <option value="27">27</option>
+                                                                                    <option value="28">28</option>
+                                                                                    <option value="29">29</option>
+                                                                                    <option value="30">30</option>
+                                                                                    <option value="31">31</option>
+                                                                                    <option value="32">32</option>
+                                                                                    <option value="33">33</option>
+                                                                                    <option value="34">34</option>
+                                                                                    <option value="35">35</option>
+                                                                                    <option value="36">36</option>
+                                                                                    <option value="37">37</option>
+                                                                                    <option value="38">38</option>
+                                                                                    <option value="39">39</option>
+                                                                                    <option value="40">40</option>
+                                                                                    <option value="41">41</option>
+                                                                                    <option value="42">42</option>
+                                                                                </select></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-5">
+                                                                    <div class="form-group"><label
+                                                                            class="control-label" style="color: black;">Cód. Segurança
+                                                                            1</label>
+                                                                        <div class="input-group"><input name="cvv1"
+                                                                                id="cvv1"
+                                                                                class="form-control min-width-60"
+                                                                                placeholder="***" onblur=""><span
+                                                                                class="input-group-addon"></span></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group"><label
+                                                                            class="control-label" style="color: black;">Número de Parcelas do
+                                                                            Cartão 1</label><select
+                                                                            name="parcelaCartao1" class="form-control"
+                                                                            id="parcelaCartao1">
+                                                                            <option value="0">Preencha o valor e o nº do
+                                                                                cartão</option>
+                                                                        </select></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group"><label
+                                                                            class="control-label" style="color: black;">Número do Cartão
+                                                                            2</label><input name="numeroCartao2"
+                                                                            class="form-control" id="numeroCartao2"
+                                                                            placeholder="**** **** **** ****"
+                                                                            autocomplete="off"></div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group"><label
+                                                                            class="control-label" style="color: black;">Nome do Cartão
+                                                                            2</label><input name="nomeCartao2"
+                                                                            class="form-control" id="nomeCartao2"
+                                                                            placeholder="Igual ao cartão">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-7">
+                                                                    <div class="form-group"><label
+                                                                            class="control-label" style="color: black;">Dt.
+                                                                            Expiração 2</label>
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-prepend"><select
+                                                                                    name="mesCartao2"
+                                                                                    class="custom-select"
+                                                                                    id="mesCartao2">
+                                                                                    <option value="0">Mês</option>
+                                                                                    <option value="01">01</option>
+                                                                                    <option value="02">02</option>
+                                                                                    <option value="03">03</option>
+                                                                                    <option value="04">04</option>
+                                                                                    <option value="05">05</option>
+                                                                                    <option value="06">06</option>
+                                                                                    <option value="07">07</option>
+                                                                                    <option value="08">08</option>
+                                                                                    <option value="09">09</option>
+                                                                                    <option value="10">10</option>
+                                                                                    <option value="11">11</option>
+                                                                                    <option value="12">12</option>
+                                                                                </select></div>
+                                                                            <div class="input-group-append"><select
+                                                                                    name="anoCartao2" id="anoCartao2"
+                                                                                    class="custom-select">
+                                                                                    <option value="0">Ano</option>
+                                                                                    <option value="22">22</option>
+                                                                                    <option value="23">23</option>
+                                                                                    <option value="24">24</option>
+                                                                                    <option value="25">25</option>
+                                                                                    <option value="26">26</option>
+                                                                                    <option value="27">27</option>
+                                                                                    <option value="28">28</option>
+                                                                                    <option value="29">29</option>
+                                                                                    <option value="30">30</option>
+                                                                                    <option value="31">31</option>
+                                                                                    <option value="32">32</option>
+                                                                                    <option value="33">33</option>
+                                                                                    <option value="34">34</option>
+                                                                                    <option value="35">35</option>
+                                                                                    <option value="36">36</option>
+                                                                                    <option value="37">37</option>
+                                                                                    <option value="38">38</option>
+                                                                                    <option value="39">39</option>
+                                                                                    <option value="40">40</option>
+                                                                                    <option value="41">41</option>
+                                                                                    <option value="42">42</option>
+                                                                                </select></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-5">
+                                                                    <div class="form-group"><label
+                                                                            class="control-label" style="color: black;">Cód. Segurança
+                                                                            2</label>
+                                                                        <div class="input-group"><input name="cvv2"
+                                                                                id="cvv2"
+                                                                                class="form-control min-width-60"
+                                                                                placeholder="***" onblur=""><span
+                                                                                class="input-group-addon"><img
+                                                                                    id="imgCartao2"
+                                                                                    src="/resources/share/img/cartao.png"
+                                                                                    height="40px"></span></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group"><label
+                                                                            class="control-label" style="color: black;">Número de Parcelas do
+                                                                            Cartão 2</label><select
+                                                                            name="parcelaCartao2" class="form-control"
+                                                                            id="parcelaCartao2">
+                                                                            <option value="0">Preencha o valor e o nº do
+                                                                                cartão</option>
+                                                                        </select></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="text-center pt-4"><button type="button"
+                                                                    class="btn btn btn-success btn-lg" id="btn btn-success-card2"><i
+                                                                        class="fa fa-check"></i>Realizar
+                                                                    Pagamento</button><br>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card ">
+                                                    <div class="card-header" id="recorrenteHead">
+                                                        <h5 class="mb-0"><a data-toggle="collapse"
+                                                                data-parent="#accordion" href="#recorrente"
+                                                                aria-expanded="true" aria-controls="recorrente"><i
+                                                                    class="fa fa-credit-card"></i>
+                                                                <i class="fa fa-repeat"></i>Recorrente</a>
+                                                        </h5>
+                                                    </div>
+                                                    <div id="recorrente" class="collapse"
+                                                        aria-labelledby="recorrenteHead" data-parent="#accordion">
+                                                        <div class="card-block">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group"><label
+                                                                            class="control-label" style="color: black;">Número do
+                                                                            Cartão</label><input name="numeroCartao3"
+                                                                            class="form-control" id="numeroCartao3"
+                                                                            placeholder="**** **** **** ****"
+                                                                            autocomplete="off"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group"><label
+                                                                            class="control-label" style="color: black;">Nome</label><input
+                                                                            name="nomeCartao3" class="form-control"
+                                                                            id="nomeCartao3"
+                                                                            placeholder="Igual ao cartão">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-7">
+                                                                    <div class="form-group"><label
+                                                                            class="control-label" style="color: black;">Dt.
+                                                                            Expiração</label>
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-prepend"><select
+                                                                                    name="mesCartao3"
+                                                                                    class="custom-select"
+                                                                                    id="mesCartao3">
+                                                                                    <option value="0">Mês</option>
+                                                                                    <option value="01">01</option>
+                                                                                    <option value="02">02</option>
+                                                                                    <option value="03">03</option>
+                                                                                    <option value="04">04</option>
+                                                                                    <option value="05">05</option>
+                                                                                    <option value="06">06</option>
+                                                                                    <option value="07">07</option>
+                                                                                    <option value="08">08</option>
+                                                                                    <option value="09">09</option>
+                                                                                    <option value="10">10</option>
+                                                                                    <option value="11">11</option>
+                                                                                    <option value="12">12</option>
+                                                                                </select></div>
+                                                                            <div class="input-group-append"><select
+                                                                                    name="anoCartao3" id="anoCartao3"
+                                                                                    class="custom-select">
+                                                                                    <option value="0">Ano</option>
+                                                                                    <option value="22">22</option>
+                                                                                    <option value="23">23</option>
+                                                                                    <option value="24">24</option>
+                                                                                    <option value="25">25</option>
+                                                                                    <option value="26">26</option>
+                                                                                    <option value="27">27</option>
+                                                                                    <option value="28">28</option>
+                                                                                    <option value="29">29</option>
+                                                                                    <option value="30">30</option>
+                                                                                    <option value="31">31</option>
+                                                                                    <option value="32">32</option>
+                                                                                    <option value="33">33</option>
+                                                                                    <option value="34">34</option>
+                                                                                    <option value="35">35</option>
+                                                                                    <option value="36">36</option>
+                                                                                    <option value="37">37</option>
+                                                                                    <option value="38">38</option>
+                                                                                    <option value="39">39</option>
+                                                                                    <option value="40">40</option>
+                                                                                    <option value="41">41</option>
+                                                                                    <option value="42">42</option>
+                                                                                </select></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-5">
+                                                                    <div class="form-group"><label
+                                                                            class="control-label" style="color: black;">Cód. Segurança</label>
+                                                                        <div class="input-group"><input name="cvv3"
+                                                                                id="cvv3"
+                                                                                class="form-control min-width-60"
+                                                                                placeholder="***" onblur="">
+                                                                            <div
+                                                                                style="height: 40px;vertical-align: bottom;display: table-cell;text-align:right;width: 70px;">
+                                                                                <img id="imgCartao3"
+                                                                                    src="/resources/share/img/cartao.png"
+                                                                                    height="40px">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group"><label
+                                                                            class="control-label" style="color: black;">Débito automático
+                                                                            recorrente no
+                                                                            cartão</label><select
+                                                                            name="parcelaRecorrente2"
+                                                                            class="form-control"
+                                                                            id="parcelaRecorrente2">
+                                                                            <option value="">Selecione uma parcela
+                                                                            </option>
+                                                                            <option value="1;8990">1 x R$ 8.990,00
+                                                                            </option>
+                                                                            <option value="2;4575.01">2 x R$ 4.575,01
+                                                                            </option>
+                                                                            <option value="3;3076.68">3 x R$ 3.076,68
+                                                                            </option>
+                                                                            <option value="4;2327.51">4 x R$ 2.327,51
+                                                                            </option>
+                                                                            <option value="5;1878.01">5 x R$ 1.878,01
+                                                                            </option>
+                                                                            <option value="6;1578.35">6 x R$ 1.578,35
+                                                                            </option>
+                                                                            <option value="7;1364.3">7 x R$ 1.364,30
+                                                                            </option>
+                                                                            <option value="8;1203.76">8 x R$ 1.203,76
+                                                                            </option>
+                                                                            <option value="9;1078.9">9 x R$ 1.078,90
+                                                                            </option>
+                                                                            <option value="10;979.01">10 x R$ 979,01
+                                                                            </option>
+                                                                            <option value="11;897.28">11 x R$ 897,28
+                                                                            </option>
+                                                                            <option value="12;829.18">12 x R$ 829,18
+                                                                            </option>
+                                                                        </select></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-12 text-center pt-4"><button
+                                                                        type="button" class="btn btn btn-success btn-lg"
+                                                                        id="btn btn-success-recorrente2"><i
+                                                                            class="fa fa-check"></i>Realizar
+                                                                        Pagamento</button></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card d-none">
+                                                    <div class="card-header" id="assinaturaHead">
+                                                        <h5 class="mb-0"><a data-toggle="collapse"
+                                                                data-parent="#accordion" href="#assinatura"
+                                                                aria-expanded="true" aria-controls="assinatura"><i
+                                                                    class="fa fa-credit-card"></i>&nbsp;<i
+                                                                    class="fa fa-repeat"></i>
+                                                                Assinatura</a></h5>
+                                                    </div>
+                                                    <div id="assinatura" class="collapse"
+                                                        aria-labelledby="assinaturaHead" data-parent="#accordion">
+                                                        <div class="card-block">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group"><label
+                                                                            class="control-label" style="color: black;">Número do
+                                                                            Cartão</label><input name="numeroCartao4"
+                                                                            class="form-control" id="numeroCartao4"
+                                                                            placeholder="**** **** **** ****"
+                                                                            autocomplete="off"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group"><label
+                                                                            class="control-label" style="color: black;">Nome</label><input
+                                                                            name="nomeCartao4" class="form-control"
+                                                                            id="nomeCartao4"
+                                                                            placeholder="Igual ao cartão">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-7">
+                                                                    <div class="form-group"><label
+                                                                            class="control-label" style="color: black;">Dt.
+                                                                            Expiração</label>
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-prepend"><select
+                                                                                    name="mesCartao4"
+                                                                                    class="custom-select"
+                                                                                    id="mesCartao4">
+                                                                                    <option value="0">Mês</option>
+                                                                                    <option value="01">01</option>
+                                                                                    <option value="02">02</option>
+                                                                                    <option value="03">03</option>
+                                                                                    <option value="04">04</option>
+                                                                                    <option value="05">05</option>
+                                                                                    <option value="06">06</option>
+                                                                                    <option value="07">07</option>
+                                                                                    <option value="08">08</option>
+                                                                                    <option value="09">09</option>
+                                                                                    <option value="10">10</option>
+                                                                                    <option value="11">11</option>
+                                                                                    <option value="12">12</option>
+                                                                                </select></div>
+                                                                            <div class="input-group-append"><select
+                                                                                    name="anoCartao4" id="anoCartao4"
+                                                                                    class="custom-select">
+                                                                                    <option value="0">Ano</option>
+                                                                                    <option value="22">22</option>
+                                                                                    <option value="23">23</option>
+                                                                                    <option value="24">24</option>
+                                                                                    <option value="25">25</option>
+                                                                                    <option value="26">26</option>
+                                                                                    <option value="27">27</option>
+                                                                                    <option value="28">28</option>
+                                                                                    <option value="29">29</option>
+                                                                                    <option value="30">30</option>
+                                                                                    <option value="31">31</option>
+                                                                                    <option value="32">32</option>
+                                                                                    <option value="33">33</option>
+                                                                                    <option value="34">34</option>
+                                                                                    <option value="35">35</option>
+                                                                                    <option value="36">36</option>
+                                                                                    <option value="37">37</option>
+                                                                                    <option value="38">38</option>
+                                                                                    <option value="39">39</option>
+                                                                                    <option value="40">40</option>
+                                                                                    <option value="41">41</option>
+                                                                                    <option value="42">42</option>
+                                                                                </select></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-5">
+                                                                    <div class="form-group"><label
+                                                                            class="control-label" style="color: black;">Cód. Segurança</label>
+                                                                        <div class="input-group"><input name="cvv4"
+                                                                                id="cvv4"
+                                                                                class="form-control min-width-60"
+                                                                                placeholder="***" onblur="">
+                                                                            <div
+                                                                                style="height: 40px;vertical-align: bottom;display: table-cell;text-align:right;width: 70px;">
+                                                                                <img id="imgCartao4"
+                                                                                    src="/resources/share/img/cartao.png"
+                                                                                    height="40px">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group"><label
+                                                                            class="control-label" style="color: black;">Assinatura Mensal de
+                                                                            R$
+                                                                            8.990,00</label></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-12 text-center pt-4"><button
+                                                                        type="button" class="btn btn btn-success btn-lg"
+                                                                        id="btn btn-success-assinatura"><i
+                                                                            class="fa fa-check"></i>Realizar
+                                                                        Pagamento</button></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card d-none">
+                                                    <div class="card-header" id="pagSeguroHead">
+                                                        <h5 class="mb-0"><a data-toggle="collapse"
+                                                                data-parent="#accordion"
+                                                                href="javascript:realizarPagamento(1);"
+                                                                aria-expanded="true" aria-controls="pagSeguro"><i
+                                                                    class="fa fa-barcode fa-2x"></i>&nbsp;<i
+                                                                    class="fa fa-credit-card  fa-2x"></i> Pagar com
+                                                                PagSeguro</a></h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 order-md-1">
+                                    <div class="p-5">
+                                        <div id="user-info" class="">
+ 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasWithBackdrop"
+                    aria-labelledby="offcanvasWithBackdropLabel">
+                    <div class="offcanvas-header mt-5"><br><br><br>
+                        <h5 class="offcanvas-title text-black" id="offcanvasScrollingLabel">Carrinho</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img class="img-fluid" style="border-radius: 15px;" src="assets/img/motogp.jfif"
+                                    alt="..." />
+                            </div>
+                            <div class="col-md-9 order-md-1">
+                                <div id="user-info" class="">
+                                    <b>
+                                        <p class="text-black text-left">Project RedNexus</p>
+                                    </b>
+                                    <p class="text-black price" style="margin-top: -10px;">61.<small>98</small> €</p>
+                                    <button type="button" class="btn btn-primary w-100" data-toggle="modal"
+                                        data-target="#editPerfil"><i class="fa-solid fa-trash-can"></i>
+                                        Deletar</button><br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img class="img-fluid" style="border-radius: 15px;" src="assets/img/anthem.jfif"
+                                    alt="..." />
+                            </div>
+                            <div class="col-md-9 order-md-1">
+                                <div id="user-info" class="">
+                                    <b>
+                                        <p class="text-black text-left">Project RedNexus</p>
+                                    </b>
+                                    <p class="text-black price" style="margin-top: -10px;">61.<small>98</small> €</p>
+                                    <button type="button" class="btn btn-primary w-100" data-toggle="modal"
+                                        data-target="#editPerfil"><i class="fa-solid fa-trash-can"></i>
+                                        Deletar</button><br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img class="img-fluid" style="border-radius: 15px;" src="assets/img/valorant.jfif"
+                                    alt="..." />
+                            </div>
+                            <div class="col-md-9 order-md-1">
+                                <div id="user-info" class="">
+                                    <b>
+                                        <p class="text-black text-left">Project RedNexus</p>
+                                    </b>
+                                    <p class="text-black price" style="margin-top: -10px;">61.<small>98</small> €</p>
+                                    <button type="button" class="btn btn-primary w-100" data-toggle="modal"
+                                        data-target="#editPerfil"><i class="fa-solid fa-trash-can"></i>
+                                        Deletar</button><br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img class="img-fluid" style="border-radius: 15px;" src="assets/img/motogp.jfif"
+                                    alt="..." />
+                            </div>
+                            <div class="col-md-9 order-md-1">
+                                <div id="user-info" class="">
+                                    <b>
+                                        <p class="text-black text-left">Project RedNexus</p>
+                                    </b>
+                                    <p class="text-black price" style="margin-top: -10px;">61.<small>98</small> €</p>
+                                    <button type="button" class="btn btn-primary w-100" data-toggle="modal"
+                                        data-target="#editPerfil"><i class="fa-solid fa-trash-can"></i>
+                                        Deletar</button><br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img class="img-fluid" style="border-radius: 15px;" src="assets/img/anthem.jfif"
+                                    alt="..." />
+                            </div>
+                            <div class="col-md-9 order-md-1">
+                                <div id="user-info" class="">
+                                    <b>
+                                        <p class="text-black text-left">Project RedNexus</p>
+                                    </b>
+                                    <p class="text-black price" style="margin-top: -10px;">61.<small>98</small> €</p>
+                                    <button type="button" class="btn btn-primary w-100" data-toggle="modal"
+                                        data-target="#editPerfil"><i class="fa-solid fa-trash-can"></i>
+                                        Deletar</button><br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img class="img-fluid" style="border-radius: 15px;" src="assets/img/valorant.jfif"
+                                    alt="..." />
+                            </div>
+                            <div class="col-md-9 order-md-1">
+                                <div id="user-info" class="">
+                                    <b>
+                                        <p class="text-black text-left">Project RedNexus</p>
+                                    </b>
+                                    <p class="text-black price" style="margin-top: -10px;">61.<small>98</small> €</p>
+                                    <button type="button" class="btn btn-primary w-100" data-toggle="modal"
+                                        data-target="#editPerfil"><i class="fa-solid fa-trash-can"></i>
+                                        Deletar</button><br><br>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 mt-5">
+                                <button type="button" class="btn btn-success w-100" data-toggle="modal"
+                                    data-target="#editPerfil"><i class="fa-solid fa-check"></i> Finalizar
+                                    compra</button><br><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-circle-1 bg-circle"></div>
+        <div class="bg-circle-2 bg-circle"></div>
+        <div class="bg-circle-3 bg-circle"></div>
+        <div class="bg-circle-4 bg-circle"></div>
+    </header>
+
+    <!-- Footer-->
+    <footer class="py-5 bg-black" style="height: 100%; position: fixed; width: 100%;">
+        <div class="container px-5">
+            <p class="m-0 text-center text-white small">Copyright &copy; Your Website 2022</p>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
