@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Cotemig Gamers</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href="css/styles.css" rel="stylesheet" />
+    
+    </head>
+    <body id="page-top" style="margin: 0; padding: 0; width: 100%; height: 100%;">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+            <div class="container px-5">
+                <a class="navbar-brand" href="/">Cotemig Gamers</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="biblioteca">Bibliotecas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="usuario">Sign Up</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Log In</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="masthead text-white">
+            <div class="masthead-content">
+                <div class="container">
+                    <!-- <h2 class="masthead-heading mb-4 text-center">Login</h2> -->
+                        <div class="d-flex justify-content-center">
+                            <div class="card w-100">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-3 order-md-1">
+                                            <div class="p-5">
+                                                <img class="img-fluid rounded-circle" src="assets/img/01.jpg" alt="..." />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9 mt-3">
+                                            <div class="p-5">
+                                                <div id="user-info" class="">
+                                                    <h2 class="text-primary text-left">Guilherme Carvalho Lopes</h2>
+                                                    <p class="text-primary text-left">Saldo: R$ 120,00</p>
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editPerfil">Editar perfil</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div id="historico-compra" class="p-5"><br><br>
+                                                <h2 class="text-primary text-left mt-5">Histórico de compras</h2><br>
+                                                <table class="table" style="width:100%">
+                                                    <tr>
+                                                        <th>ID da Transação</td>
+                                                        <th>Produto</td>
+                                                        <th>Data Compra</td>
+                                                        <th>Ações</td>
+                                                    </tr>
+                                                    <tr th:each="biblioteca : ${bibliotecas}">
+                                                        <td th:text="${biblioteca.idUsuario}"></td>
+                                                        <td th:text="${biblioteca.idProduto}"></td>
+                                                        <td th:text="${biblioteca.idProduto}"></td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-danger text-white" data-toggle="modal" data-target="#reembolsarModal">Reembolsar</button>
+                                                            <!-- <a class="btn btn-danger text-white" th:href="@{/delete(id=${biblioteca.idUsuario})}">Reembolsar</a> -->
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="bg-circle-1 bg-circle"></div>
+            <div class="bg-circle-2 bg-circle"></div>
+            <div class="bg-circle-3 bg-circle"></div>
+            <div class="bg-circle-4 bg-circle"></div>
+        </header>
+
+        <div class="modal fade" id="editPerfil" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Editar Perfil</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="text-left">
+                            <div class="form-group mb-2">
+                                <label class="text-secondary mb-1 ml-1" for="nome">Nome:</label>
+                                <input type="nome" class="form-control" id="nome" placeholder="Nome">
+                            </div>
+                            <div class="form-group mb-2">
+                                <label class="text-secondary mb-1 ml-1" for="dataNascimento">Data de Nascimento:</label>
+                                <input type="date" class="form-control" id="dataNascimento" placeholder="dataNascimento">
+                            </div>
+                            <div class="form-group mb-2">
+                              <label class="text-secondary mb-1 ml-1" for="CPF">CPF:</label>
+                              <input type="text" class="form-control" id="CPF" placeholder="CPF">
+                            </div>
+                            <div class="form-group mb-2">
+                              <label class="text-secondary mb-1 ml-1" for="email">Email:</label>
+                              <input type="text" class="form-control" id="email" placeholder="email">
+                            </div>
+                            <div class="form-group mb-2">
+                                <label class="text-secondary mb-1 ml-1" for="senha">Senha:</label>
+                                <input type="password" class="form-control" id="senha">
+                            </div>
+                            <div class="form-group mb-2">
+                                <label class="text-secondary mb-1 ml-1" for="telefone">Telefone:</label>
+                                <input type="text" class="form-control" id="telefone">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary text-white" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="reembolsarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Reembolsar</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Deseja realmente reembolsar este produto?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary text-white" data-dismiss="modal">Não</button>
+                        <button type="button" class="btn btn-primary">Sim</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer-->
+        <footer class="py-5 bg-black"  style="height: 100%; position: fixed; width: 100%;">
+            <div class="container px-5"><p class="m-0 text-center text-white small">Copyright &copy; Your Website 2022</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

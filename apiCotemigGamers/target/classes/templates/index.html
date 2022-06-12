@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Cotemig Gamers</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/css/products.css" rel="stylesheet" />
+        <link href="/css/styles.css" rel="stylesheet" />
+        <style>
+            .product-list {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            
+            .card-product {
+                flex: 1 0 21%; 
+                margin: 50px;
+                width: 250px;
+                height: 100%;
+                /* background: #191919; */
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                border-radius: 20px;
+                overflow: hidden;
+            }
+
+
+            .card-product .imgBox {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+                z-index: 1;
+            }
+
+            .card-product .imgBox img {
+                width: 100%;
+                height: 100%;
+                border-radius: 15px;
+                max-height: 186.9px;
+            }
+
+            .card-product .contentBox {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                z-index: 2;
+            }
+
+            .card-product .contentBox h3 {
+                position: relative;
+                top:0;
+                margin-top: 10px;
+                font-size: 13px;
+                color: black;
+                font-weight: 500;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                transition: 0.5s;
+            }
+
+            .card-product .contentBox .price {
+                position: relative;
+                top:0;
+                font-size: 15px;
+                color: black;
+                font-weight: 700;
+                letter-spacing: 1px;
+                transition: 0.5s;
+            }
+
+            .card-product .contentBox .buy {
+                position: relative;
+                top: 50px;
+                opacity: 0;
+                padding: 5px 15px;
+                color: #000000;
+                text-decoration: none;
+                background: #ffce00;
+                border-radius: 30px;
+                text-transform: uppercase;
+                font-size: 10px;
+                transition: 0.5s;
+            }
+
+            .card-product:hover .contentBox .buy {
+                top: -83px;
+                opacity: 1;
+            }
+
+            .card-product:hover .contentBox h3 {
+                top: 10px;
+                opacity: 1;
+            }
+
+
+            .card-product:hover .contentBox .price {
+                top: 10px;
+                opacity: 1;
+            }
+
+
+        </style>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+            <div class="container px-5">
+                <a class="navbar-brand" href="#page-top">Cotemig Gamers</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="biblioteca">Bibliotecas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="usuario">Sign Up</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Log In</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="masthead text-center text-white">
+            <div class="masthead-content">
+                <div class="container px-5">
+                    <h1 class="masthead-heading mb-0">Cotemig Gamers</h1>
+                    <h2 class="masthead-subheading mb-0">Sua melhor loja de jogos</h2>
+                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Learn More</a>
+                </div>
+            </div>
+            <div class="bg-circle-1 bg-circle"></div>
+            <div class="bg-circle-2 bg-circle"></div>
+            <div class="bg-circle-3 bg-circle"></div>
+            <div class="bg-circle-4 bg-circle"></div>
+        </header>
+        <!-- Content section 1-->
+        <section id="scroll">
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-12">
+                        <div class="product-list" th:each="produto : ${produtos}">
+                            <div class="card-product">
+                                <div class="imgBox">
+                                <img src="/assets/img/motogp.jfif" alt="mouse corsair" class="img-responsive">
+                                </div>
+                            
+                                <div class="contentBox">
+                                <h3 th:text="${produto.nome}"></h3>
+                                <h2 class="price"><small th:text="${produto.valor}"></small> €</h2>
+                                <a href="#" class="buy">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-5 bg-black">
+            <div class="container px-5"><p class="m-0 text-center text-white small">Copyright &copy; Your Website 2022</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
