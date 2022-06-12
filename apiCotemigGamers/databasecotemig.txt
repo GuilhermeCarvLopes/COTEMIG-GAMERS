@@ -1,0 +1,165 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema cotemigGamer
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema cotemigGamer
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `cotemigGamer` DEFAULT CHARACTER SET utf8 ;
+USE `cotemigGamer` ;
+
+-- -----------------------------------------------------
+-- Table `cotemigGamer`.`CATEGORIA`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cotemigGamer`.`CATEGORIA` (
+  `idCATEGORIA` INT NOT NULL AUTO_INCREMENT,
+  `NOME` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idCATEGORIA`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `cotemigGamer`.`EMPRESA`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cotemigGamer`.`EMPRESA` (
+  `idEMPRESA` INT ZEROFILL NOT NULL,
+  `NOMEFANTASIA` VARCHAR(125) NOT NULL,
+  `RAZAOSOCIAL` VARCHAR(125) NOT NULL,
+  `CNPJ` VARCHAR(45) NOT NULL,
+  `EMAIL` VARCHAR(45) NOT NULL,
+  `TELEFONE` VARCHAR(45) NOT NULL,
+  `SENHA` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idEMPRESA`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `cotemigGamer`.`PRODUTO`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cotemigGamer`.`PRODUTO` (
+  `idPRODUTO` INT NOT NULL AUTO_INCREMENT,
+  `NOME` VARCHAR(100) NOT NULL,
+  `DESCRICAO` TEXT NOT NULL,
+  `VALOR` DOUBLE NOT NULL,
+  `FOTO` VARCHAR(45) NOT NULL,
+  `idEMPRESA` INT ZEROFILL NOT NULL,
+  PRIMARY KEY (`idPRODUTO`),
+  INDEX `fk_PRODUTO_EMPRESA1_idx` (`idEMPRESA` ASC) ,
+  CONSTRAINT `fk_PRODUTO_EMPRESA1`
+    FOREIGN KEY (`idEMPRESA`)
+    REFERENCES `cotemigGamer`.`EMPRESA` (`idEMPRESA`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `cotemigGamer`.`PRODUTO_TEM_CATEGORIA`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cotemigGamer`.`PRODUTO_TEM_CATEGORIA` (
+  `idCATEGORIA` INT NOT NULL,
+  `idPRODUTO` INT NOT NULL,
+  PRIMARY KEY (`idCATEGORIA`, `idPRODUTO`),
+  INDEX `fk_CATEGORIA_has_PRODUTO_PRODUTO1_idx` (`idPRODUTO` ASC) ,
+  INDEX `fk_CATEGORIA_has_PRODUTO_CATEGORIA_idx` (`idCATEGORIA` ASC) ,
+  CONSTRAINT `fk_CATEGORIA_has_PRODUTO_CATEGORIA`
+    FOREIGN KEY (`idCATEGORIA`)
+    REFERENCES `cotemigGamer`.`CATEGORIA` (`idCATEGORIA`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_CATEGORIA_has_PRODUTO_PRODUTO1`
+    FOREIGN KEY (`idPRODUTO`)
+    REFERENCES `cotemigGamer`.`PRODUTO` (`idPRODUTO`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `cotemigGamer`.`USUARIO`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cotemigGamer`.`USUARIO` (
+  `idUSUARIO` INT NOT NULL AUTO_INCREMENT,
+  `NOME` VARCHAR(45) NOT NULL,
+  `DATANASCIMENTO` VARCHAR(45) NOT NULL,
+  `USERNAME` VARCHAR(45) NOT NULL,
+  `CPF` VARCHAR(45) NOT NULL,
+  `EMAIL` VARCHAR(45) NOT NULL,
+  `SENHA` VARCHAR(45) NOT NULL,
+  `TELEFONE` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idUSUARIO`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `cotemigGamer`.`TRANSACAO`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cotemigGamer`.`TRANSACAO` (
+  `idTRANSACAO` INT NOT NULL AUTO_INCREMENT,
+  `VALOR` DOUBLE NOT NULL,
+  `DATAPAGAMENTO` DATE NOT NULL,
+  `idPRODUTO` INT NOT NULL,
+  `idUSUARIO` INT NOT NULL,
+  PRIMARY KEY (`idTRANSACAO`),
+  INDEX `fk_TRANSACAO_PRODUTO1_idx` (`idPRODUTO` ASC) ,
+  INDEX `fk_TRANSACAO_USUARIO1_idx` (`idUSUARIO` ASC) ,
+  CONSTRAINT `fk_TRANSACAO_PRODUTO1`
+    FOREIGN KEY (`idPRODUTO`)
+    REFERENCES `cotemigGamer`.`PRODUTO` (`idPRODUTO`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_TRANSACAO_USUARIO1`
+    FOREIGN KEY (`idUSUARIO`)
+    REFERENCES `cotemigGamer`.`USUARIO` (`idUSUARIO`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `cotemigGamer`.`BIBLIOTECA`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cotemigGamer`.`BIBLIOTECA` (
+  `idBIBLIOTECA` INT NOT NULL AUTO_INCREMENT,
+  `idUSUARIO` INT NOT NULL,
+  PRIMARY KEY (`idBIBLIOTECA`),
+  INDEX `fk_BIBLIOTECA_USUARIO1_idx` (`idUSUARIO` ASC) ,
+  CONSTRAINT `fk_BIBLIOTECA_USUARIO1`
+    FOREIGN KEY (`idUSUARIO`)
+    REFERENCES `cotemigGamer`.`USUARIO` (`idUSUARIO`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `cotemigGamer`.`BIBLIOTECA_TEM_PRODUTO`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cotemigGamer`.`BIBLIOTECA_TEM_PRODUTO` (
+  `idPRODUTO` INT NOT NULL,
+  `idBIBLIOTECA` INT NOT NULL,
+  PRIMARY KEY (`idPRODUTO`, `idBIBLIOTECA`),
+  INDEX `fk_PRODUTO_has_BIBLIOTECA_BIBLIOTECA1_idx` (`idBIBLIOTECA` ASC) ,
+  INDEX `fk_PRODUTO_has_BIBLIOTECA_PRODUTO1_idx` (`idPRODUTO` ASC) ,
+  CONSTRAINT `fk_PRODUTO_has_BIBLIOTECA_PRODUTO1`
+    FOREIGN KEY (`idPRODUTO`)
+    REFERENCES `cotemigGamer`.`PRODUTO` (`idPRODUTO`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_PRODUTO_has_BIBLIOTECA_BIBLIOTECA1`
+    FOREIGN KEY (`idBIBLIOTECA`)
+    REFERENCES `cotemigGamer`.`BIBLIOTECA` (`idBIBLIOTECA`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
